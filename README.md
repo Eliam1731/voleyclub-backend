@@ -131,18 +131,7 @@ Guarda el token de acceso (`access`) para futuras peticiones.
    Authorization: Bearer TU_TOKEN
    ```
 
----
 
-## 🛠️ Despliegue en Render (opcional)
-
-1. Sube el proyecto a GitHub
-2. Crea una cuenta en [https://render.com](https://render.com)
-3. Conecta el repo y elige:
-   - Runtime: Python
-   - Start command: `gunicorn voleiapp.wsgi:application`
-   - Agrega variables de entorno: `DEBUG=False`, `SECRET_KEY=...`
-
----
 
 ## 🧼 Buenas prácticas
 
