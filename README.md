@@ -143,7 +143,7 @@ Guarda el token de acceso (`access`) para futuras peticiones.
 
 ---
 
-## 📸 Capturas (opcional)
+## 📸 Capturas
 
 ![Login](assets/login.png)
 ![Dashboard](assets/dash.png)
