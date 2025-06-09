@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es" id="html" class="">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuevo Jugador</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    label {
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-6">
+
+  <!-- Aplica modo oscuro si estaba activo -->
+  <script>
+    const html = document.getElementById('html');
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+  </script>
+
+  <!-- 🔙 Regresar -->
+  <div class="mb-4">
+    <a href="jugadores.html" class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline text-sm">
+      <i data-lucide="corner-up-left" class="w-5 h-5"></i> Volver a jugadores
+    </a>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-6">Registrar nuevo jugador</h1>
+
+  <!-- 📋 Formulario -->
+  <form id="form-jugador" class="space-y-4" enctype="multipart/form-data">
+
+    <!-- 📌 Nombre -->
+    <div>
+      <label for="nombre_completo">Nombre completo</label>
+      <input type="text" id="nombre_completo" name="nombre_completo" required class="input">
+    </div>
+
+    <!-- 📅 Fecha nacimiento -->
+    <div>
+      <label for="fecha_nacimiento">Fecha de nacimiento</label>
+      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required class="input">
+    </div>
+
+    <!-- 🎯 Posición -->
+    <div>
+      <label for="posicion">Posición</label>
+      <select id="posicion" name="posicion" required class="input">
+        <option value="">Selecciona</option>
+        <option value="Colocador">Colocador</option>
+        <option value="Libero">Líbero</option>
+        <option value="Central">Central</option>
+        <option value="Punta">Punta</option>
+        <option value="Opuesto">Opuesto</option>
+      </select>
+    </div>
+
+<!-- 👕 Número y tallas -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div>
+        <label for="numero_playera">Número de playera</label>
+        <input type="number" id="numero_playera" name="numero_playera" required class="input">
+      </div>
+
+      <div>
+        <label for="talla_playera">Talla playera</label>
+        <select id="talla_playera" name="talla_playera" required class="input">
+          <option value="">Selecciona</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="ch">ch</option>
+          <option value="m">m</option>
+          <option value="g">g</option>
+          <option value="xg">xg</option>
+          <option value="xxg">xxg</option>
+          <option value="xxxg">xxxg</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="talla_short">Talla short</label>
+        <select id="talla_short" name="talla_short" class="input">
+          <option value="">Selecciona</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="ch">ch</option>
+          <option value="m">m</option>
+          <option value="g">g</option>
+          <option value="xg">xg</option>
+          <option value="xxg">xxg</option>
+          <option value="xxxg">xxxg</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="talla_licra">Talla licra</label>
+        <select id="talla_licra" name="talla_licra" class="input">
+          <option value="">Selecciona</option>
+          <option value="xs">xs</option>
+          <option value="ch">ch</option>
+          <option value="m">m</option>
+          <option value="g">g</option>
+          <option value="unitalla">unitalla</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 📞 Teléfono del tutor -->
+    <div>
+      <label for="telefono_tutor">Teléfono del tutor</label>
+      <input type="text" id="telefono_tutor" name="telefono_tutor" required class="input">
+    </div>
+
+    <!-- 🧠 Observaciones -->
+    <div>
+      <label for="observaciones">Observaciones</label>
+      <textarea id="observaciones" name="observaciones" class="input"></textarea>
+    </div>
+
+    <!-- 🧑‍🏫 Entrenador -->
+
+    <!-- 📂 Archivos -->
+    <div >
+        <label for="foto" class="block font-semibold">Foto</label>
+        <div class="relative w-full">
+          <input type="file" id="foto" name="foto" accept="image/*" class="sr-only">
+          <label for="foto"
+                 class="flex items-center justify-between px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700">
+            <span id="nombre-foto">Seleccionar archivo</span>
+            <i data-lucide="upload" class="w-4 h-4"></i>
+          </label>
+        </div>
+
+     <!-- 📎 CURP -->
+        <div>
+          <label for="curp" class="block font-semibold">CURP (PDF)</label>
+          <div class="relative w-full">
+            <input type="file" id="curp" name="curp" accept=".pdf" class="sr-only">
+            <label for="curp"
+                   class="flex items-center justify-between px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700">
+              <span id="nombre-curp">Seleccionar archivo</span>
+              <i data-lucide="upload" class="w-4 h-4"></i>
+            </label>
+          </div>
+        </div>
+
+    <!-- 📎 Acta nacimiento -->
+        <div>
+          <label for="acta_nacimiento" class="block font-semibold">Acta nacimiento (PDF)</label>
+          <div class="relative w-full">
+            <input type="file" id="acta_nacimiento" name="acta_nacimiento" accept=".pdf" class="sr-only">
+            <label for="acta_nacimiento"
+                   class="flex items-center justify-between px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700">
+              <span id="nombre-acta">Seleccionar archivo</span>
+              <i data-lucide="upload" class="w-4 h-4"></i>
+            </label>
+          </div>
+        </div>
+    </div>
+
+    <!-- 🟦 Botón enviar -->
+    <div>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+        Guardar jugador
+      </button>
+    </div>
+
+  </form>
+
+  <!-- 🔒 Script para desactivar una opción si se elige la otra -->
+    <script>
+      const short = document.getElementById('talla_short');
+      const licra = document.getElementById('talla_licra');
+
+      short.addEventListener('change', () => {
+        if (short.value !== '') {
+          licra.disabled = true;
+        } else {
+          licra.disabled = false;
+        }
+      });
+
+      licra.addEventListener('change', () => {
+        if (licra.value !== '') {
+          short.disabled = true;
+        } else {
+          short.disabled = false;
+        }
+      });
+    </script>
+
+  <script>lucide.createIcons();</script>
+  
+
+  <style>
+    .input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border-radius: 0.5rem;
+      background-color: rgb(224, 224, 224);
+      color: black;
+    }
+    .dark .input {
+      background-color: #1f2937;
+      color: white;
+    }
+  </style>
+  <script src="nuevo_jugador.js"></script>
+
+</body>
+</html>
