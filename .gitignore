@@ -1,0 +1,22 @@
+# Entorno virtual
+venv/
+.env
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Archivos de sistema
+.DS_Store
+*.log
+
+# Archivos de usuario
+*.swp
+
+# Archivos de configuración de editores
+.vscode/
+.idea/
+
+# Archivos de migración innecesarios (opcional)
+*/migrations/__pycache__/

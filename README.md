@@ -58,21 +58,30 @@ voleiapp/
 ## ⚙️ Instalación local
 
 ```bash
-git clone 
+# 1. Clonar el repositorio
+git clone https://github.com/Eliam1731/voleyclub-backend.git
 cd voleyclub-backend
 
+# 2. Crear y activar el entorno virtual
+# En Windows:
 python -m venv venv
-venv\Scripts\activate  # En Windows
-# source venv/bin/activate  # En Linux/Mac
+venv\Scripts\activate
 
+# En Linux o macOS:
+# python3 -m venv venv
+# source venv/bin/activate
+
+# 3. Instalar dependencias
 pip install -r requirements.txt
 
+# 4. Aplicar migraciones
 python manage.py migrate
+
+# 5. Crear superusuario
 python manage.py createsuperuser
 
+# 6. Iniciar el servidor
 python manage.py runserver
-```
-
 ---
 
 ## 🔐 Variables de entorno recomendadas
